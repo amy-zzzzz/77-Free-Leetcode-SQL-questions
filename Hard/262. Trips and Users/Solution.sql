@@ -7,4 +7,4 @@ LEFT JOIN Users u2 on t.client_id=u2.users_id)
 SELECT request_at AS Day, ROUND((COUNT(DISTINCT CASE WHEN status like 'cancelled%' THEN id END)/COUNT(DISTINCT id)),2) AS 'Cancellation Rate'
 FROM t1
 WHERE driver_banned = 'No' AND client_banned = 'No'
-GROUP BY request_at
+GROUP BY request_at;
